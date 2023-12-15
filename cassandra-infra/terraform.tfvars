@@ -9,27 +9,27 @@ root_vpc_name                 = "ninja-vpc-01"
 
 /*--------------- Public Subnets ---------------*/
 
-root_public_subnets_az   = ["eu-west-3a","eu-west-3b"]
-root_public_subnets_cidr = ["10.0.2.0/24","10.0.4.0/24"]
+root_public_subnets_az   = ["eu-west-3a", "eu-west-3b"]
+root_public_subnets_cidr = ["10.0.2.0/24", "10.0.4.0/24"]
 root_public_subnets_tags = [{
 
   "Name" = "ninja-pub-sub-01"
-  
-},
-{ 
-  "Name" = "ninja-pub-sub-02"
+
+  },
+  {
+    "Name" = "ninja-pub-sub-02"
 }]
 root_enable_map_public_ip_on_launch = true
 
 /*--------------- Private Subnets ---------------*/
 
-root_private_subnets_az   = ["eu-west-3a" ,"eu-west-3b"]
-root_private_subnets_cidr = ["10.0.6.0/24","10.0.8.0/24"]
+root_private_subnets_az   = ["eu-west-3a", "eu-west-3b"]
+root_private_subnets_cidr = ["10.0.6.0/24", "10.0.8.0/24"]
 root_private_subnets_tags = [{
   "Name" = "ninja-priv-sub-01"
-},
-{
-  "Name" = "ninja-priv-sub-02"
+  },
+  {
+    "Name" = "ninja-priv-sub-02"
 }]
 
 /*--------------- # Internet Gateway ---------------*/
@@ -52,10 +52,10 @@ root_pri_route_table_name = "ninja-route-priv-01"
 
 /*--------------- SG ---------------*/
 
-root_public_ingress_ports = [22, 443, 80]
+root_public_ingress_ports  = [22, 443, 80]
 root_private_ingress_ports = [22, 7000, 7001, 9042]
-root_bastion_sg_name = "bastion-SG"
-root_private_sg_name = "private-SG"
+root_bastion_sg_name       = "bastion-SG"
+root_private_sg_name       = "private-SG"
 
 /*--------------- Key Pair ---------------*/
 
@@ -70,5 +70,5 @@ root_bastion_instance_type = "t2.micro"
 /*--------------- Private Instance ---------------*/
 
 root_private_instance_count = "1"
-root_private_instance_name = "cassandra-instance"
-root_private_instance_type = "t2.medium"
+root_private_instance_name  = "cassandra-instance"
+root_private_instance_type  = "t2.medium"

@@ -38,14 +38,14 @@ variable "root_bastion_instance_type" {
   description = "type of instance for bastion server"
   type        = string
   default     = "t2.medium"
-  
+
 }
 
 variable "root_bastion_instance_name" {
   description = "bastion instance name"
   type        = string
   default     = "bastion-instance"
-  
+
 }
 
 /*--------------- Private Instance ---------------*/
@@ -61,12 +61,12 @@ variable "root_private_instance_type" {
   description = "type of instance for bastion server"
   type        = string
   default     = "t2.medium"
-  
+
 }
 
 variable "root_private_instance_name" {
   description = "private instance name"
   type        = string
   default     = "private-instance"
-  
+
 }

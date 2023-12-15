@@ -1,7 +1,7 @@
 /*--------------- AMI ids ---------------*/
 
 data "aws_ami" "ubuntu" {
-  
+
   most_recent = true
   # ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20231025
   filter {
@@ -17,8 +17,8 @@ data "aws_ami" "ubuntu" {
     name   = "root-device-type"
     values = ["ebs"]
   }
-  
-  owners = ["099720109477"] 
+
+  owners = ["099720109477"]
 }
 
 output "image-id" {

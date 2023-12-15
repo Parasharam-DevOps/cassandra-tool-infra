@@ -1,22 +1,22 @@
 /*---------------vpc variables---------------*/
 
 variable "root_vpc_cidr" {
-  type = string
+  type    = string
   default = "10.0.0.0/16"
 }
 
 variable "root_vpc_enable_dns_support" {
-  type = bool
+  type    = bool
   default = true
 }
 
 variable "root_vpc_enable_dns_hostnames" {
-  type = bool
+  type    = bool
   default = true
 }
 
 variable "root_vpc_name" {
-  type = string
+  type    = string
   default = "ninja-vpc-01"
 }
 /*---------------subnet variables---------------*/
@@ -33,10 +33,10 @@ variable "root_public_subnets_cidr" {
 variable "root_public_subnets_az" {
   description = "public subnet availability zones"
   type        = list(string)
-  default     = ["eu-west-3a","eu-west-3b"]
+  default     = ["eu-west-3a", "eu-west-3b"]
 }
 variable "root_enable_map_public_ip_on_launch" {
-  type = bool
+  type    = bool
   default = true
 }
 
@@ -45,7 +45,7 @@ variable "root_public_subnets_tags" {
   type        = list(map(string))
   default = [{
     "Name" = "ninja-pub-sub-01"
-    
+
   }]
 }
 
@@ -54,7 +54,7 @@ variable "root_public_subnets_tags" {
 variable "root_private_subnets_cidr" {
   description = "private subnet cidr block"
   type        = list(string)
-  default     = ["10.0.6.0/24","10.0.8.0/24"]
+  default     = ["10.0.6.0/24", "10.0.8.0/24"]
 
 }
 
@@ -70,33 +70,33 @@ variable "root_private_subnets_tags" {
   type        = list(map(string))
   default = [{
     "Name" = "ninja-priv-sub-01"
-    
+
   }]
 }
 
 /*--------------- # Internet Gateway ---------------*/
 
 variable "root_igw_name" {
-  type = string
+  type    = string
   default = "ninja-igw-01"
 }
 
 /*--------------- # NAT Gateway ---------------*/
 
 variable "root_nat_name" {
-  type = string
+  type    = string
   default = "ninja-nat-01"
 }
 
 /*--------------- # Route Table ---------------*/
 
 variable "root_pub_route_table_name" {
-  type = string
+  type    = string
   default = "ninja-route-pub-01"
 }
 
 variable "root_pri_route_table_name" {
-  type = string
+  type    = string
   default = "ninja-route-priv-01"
 }
 
