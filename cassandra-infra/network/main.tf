@@ -1,10 +1,5 @@
 /*--------------- VPC ---------------*/
 
-
-resource "aws_vpc" "default_vpc" {
-  cidr_block = "172.31.0.0/16"
-}
-
 resource "aws_vpc" "vpc-01" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = var.vpc_enable_dns_support
@@ -13,26 +8,6 @@ resource "aws_vpc" "vpc-01" {
     Name = var.vpc_name
   }
 }
-
-/*--------------- Default VPC Peering---------------*/
-
-
-resource "aws_vpc_peering_connection" "vpc_peering" {
-  peer_vpc_id  = "vpc-0c862643decac8d05"
-  vpc_id = aws_vpc.vpc-01.id
-  auto_accept = true
-  tags = {
-    Name = "VPC Peering between default and  New VPC"
-  }
-}
-
-resource "aws_route" "default-rt" {
-  route_table_id            = "rtb-044def156eb4efad9"  
-  destination_cidr_block    = var.vpc_cidr
-  vpc_peering_connection_id = aws_vpc_peering_connection.vpc_peering.id
-  depends_on = [ aws_vpc_peering_connection.vpc_peering ]
-}
-
 
 /*--------------- Public Subnets ---------------*/
 
@@ -145,6 +120,25 @@ resource "aws_route_table_association" "private_route_association01" {
   subnet_id      = aws_subnet.private_subnets[count.index].id
   route_table_id = aws_route_table.private_rtb.id
   depends_on     = [aws_route_table.private_rtb]
+}
+
+/*--------------- Default VPC Peering---------------*/
+
+
+resource "aws_vpc_peering_connection" "vpc_peering" {
+  peer_vpc_id  = "vpc-0c862643decac8d05"
+  vpc_id = aws_vpc.vpc-01.id
+  auto_accept = true
+  tags = {
+    Name = "VPC Peering between default and  New VPC"
+  }
+}
+
+resource "aws_route" "default-rt" {
+  route_table_id            = "rtb-044def156eb4efad9"  
+  destination_cidr_block    = var.vpc_cidr
+  vpc_peering_connection_id = aws_vpc_peering_connection.vpc_peering.id
+  depends_on = [ aws_vpc_peering_connection.vpc_peering ]
 }
 
 

@@ -3,7 +3,6 @@ terraform {
     bucket = "vidhyarthi-tool-state-file"
     key = "parasharam-State-File/terraform.tfstate"
     region = "us-west-1"
-    # dynamodb_table = "dynamoDB-table"
   }
 }
 
