@@ -67,18 +67,22 @@ module "security_module" {
   private_sg_name       = var.root_private_sg_name
   public_subnets_cidr   = [var.root_public_subnets_cidr[0]]
   private_ingress_ports = var.root_private_ingress_ports
+
   /*--------------- Key Pair | ami-id ---------------*/
+
   ami_id   = data.aws_ami.ubuntu.id
   key_pair = var.root_key_pair
 
   /*--------------- Bastion Instance ---------------*/
+
   public_instance_count      = var.root_public_instance_count
+  bastion_instance_subnet_id = module.network_module.public-subnets-id[0]
   bastion_instance_name      = var.root_bastion_instance_name
   bastion_instance_type      = var.root_bastion_instance_type
-  bastion_instance_subnet_id = module.network_module.public-subnets-id[0]
 
 
   /*--------------- Private Instance ---------------*/
+
   private_instance_count     = var.root_private_instance_count
   private_instance_subnet_id = module.network_module.private-subnets-id
   private_instance_name      = var.root_private_instance_name
