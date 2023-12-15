@@ -12,7 +12,15 @@ resource "aws_security_group" "bastion-SG" {
       protocol    = "TCP"
       to_port     = ingress_port.value
       cidr_blocks = ["0.0.0.0/0"]
+
     }
+  }
+    ingress {
+    from_port   = -1  
+    to_port     = -1  
+    protocol    = "ICMP"
+    cidr_blocks = ["0.0.0.0/0"]
+    
   }
   egress {
     from_port   = 0
@@ -38,6 +46,15 @@ resource "aws_security_group" "private-SG" {
       cidr_blocks = [ var.public_subnets_cidr[0] ]
     }
   }
+
+   ingress {
+    from_port   = -1  
+    to_port     = -1  
+    protocol    = "ICMP"
+    cidr_blocks = ["0.0.0.0/0"]
+    
+  }
+  
   egress {
     from_port   = 0
     protocol    = "-1"

@@ -53,13 +53,13 @@ root_pri_route_table_name = "ninja-route-priv-01"
 /*--------------- SG ---------------*/
 
 root_public_ingress_ports = [22, 443, 80]
-root_private_ingress_ports = [22, 443, 80]
+root_private_ingress_ports = [22, 7000, 7001, 9042]
 root_bastion_sg_name = "bastion-SG"
 root_private_sg_name = "private-SG"
 
 /*--------------- Key Pair ---------------*/
 
-root_key_pair = "ninja-01"
+root_key_pair = "private-key"
 
 /*--------------- Bastion Instance ---------------*/
 
@@ -70,5 +70,5 @@ root_bastion_instance_type = "t2.micro"
 /*--------------- Private Instance ---------------*/
 
 root_private_instance_count = "1"
-root_private_instance_name = "private-instance"
+root_private_instance_name = "cassandra-instance"
 root_private_instance_type = "t2.medium"
