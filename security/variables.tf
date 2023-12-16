@@ -16,7 +16,7 @@ variable "bastion_sg_name" {
 variable "private_ingress_ports" {
   description = "SG inbound ports"
   type        = list(number)
-  default     = [22, 443, 80]
+  default     = [22, 7000, 7001, 9042]
 }
 
 variable "private_sg_name" {
