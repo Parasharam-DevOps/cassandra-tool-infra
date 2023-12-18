@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         REPO_URL = 'https://github.com/Parasharam-DevOps/cassandra-tool-infra.git'
-        TERRAFORM_WORKSPACE = "/var/lib/jenkins/workspace/Cassandra-DB-Terraform_Infra/"
+        TERRAFORM_WORKSPACE = "/var/lib/jenkins/workspace/${JOB_NAME}/"
     }
     stages {
         stage('Clone Repository') {
