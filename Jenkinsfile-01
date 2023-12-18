@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Select action: apply or destroy')
+        choice(name: 'ACTION', choices: ['Apply', 'Destroy'], description: 'Select action: Apply or Destroy')
     }
     environment {
         REPO_URL = 'https://github.com/Parasharam-DevOps/cassandra-tool-infra.git'
@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Approval For Apply') {
             when {
-                expression { params.ACTION == 'apply' }
+                expression { params.ACTION == 'Apply' }
             }
             steps {
                 input "Do you want to apply Terraform changes?"
@@ -40,7 +40,7 @@ pipeline {
 
         stage('Terraform Apply') {
             when {
-                expression { params.ACTION == 'apply' }
+                expression { params.ACTION == 'Apply' }
             }
             steps {
                 sh """
@@ -52,7 +52,7 @@ pipeline {
 
         stage('Approval for Destroy') {
             when {
-                expression { params.ACTION == 'destroy' }
+                expression { params.ACTION == 'Destroy' }
             }
             steps {
                 input "Do you want to Terraform Destroy?"
@@ -61,7 +61,7 @@ pipeline {
 
         stage('Terraform Destroy') {
             when {
-                expression { params.ACTION == 'destroy' }
+                expression { params.ACTION == 'Destroy' }
             }
             steps {
                 sh "cd ${env.TERRAFORM_WORKSPACE} && terraform destroy -auto-approve"
