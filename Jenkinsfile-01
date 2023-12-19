@@ -69,16 +69,12 @@ pipeline {
         }
     }
 
-post {
-    success {
-        script {
-            emailext body: 'Job Successfully Done', subject: 'Status of job', to: 'parsu176desai@gmail.com'
+    post {
+        success {
+            echo 'Succeeded!'
         }
-    }
-    failure {
-        script {
-            emailext body: 'Job Failed', subject: 'Status of job', to: 'parsu176desai@gmail.com'
+        failure {
+            echo 'Failed!'
         }
     }
 }
-
