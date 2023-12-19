@@ -71,10 +71,14 @@ pipeline {
 
     post {
         success {
-            echo 'Succeeded!'
+            script {
+            emailext body: 'Job failed', subject: 'Status of job', to: 'parsu176desai@gmail.com'
+        }
         }
         failure {
-            echo 'Failed!'
+            script {
+            emailext body: 'Job failed', subject: 'Status of job', to: 'parsu176desai@gmail.com'
+        }
         }
     }
 }
