@@ -68,13 +68,17 @@ pipeline {
             }
         }
     }
-
-    post {
-        success {
-            echo 'Succeeded!'
+}
+post {
+    success {
+        script {
+            emailext body: 'Terraform Job Successfully Done', subject: 'Status of job', to: 'parsu176desai@gmail.com'
         }
-        failure {
-            echo 'Failed!'
+    }
+    failure {
+        script {
+            emailext body: 'Terraform Job Failed', subject: 'Status of job', to: 'parsu176desai@gmail.com'
         }
     }
 }
+
