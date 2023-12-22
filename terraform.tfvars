@@ -69,6 +69,6 @@ root_bastion_instance_type = "t2.micro"
 
 /*--------------- Private Instance ---------------*/
 
-root_private_instance_count = "1"
+root_private_instance_count = "2"
 root_private_instance_name  = "cassandra-instance"
 root_private_instance_type  = "t2.medium"
