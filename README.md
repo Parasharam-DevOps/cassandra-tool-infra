@@ -6,4 +6,4 @@
 ![image](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/1ead4d8d-db90-46e5-b3bd-eb668ae89fcb)
 
 
-![image](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/d2dc47c6-d226-4890-b2d3-6b71e5a039cc)
+![image](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/5267ff81-077f-489b-8edc-9f08daa7edce)
