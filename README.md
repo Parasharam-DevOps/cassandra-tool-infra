@@ -1,3 +1,5 @@
+
+
 ![image](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/f76bef55-f7a6-443d-9c14-0242327101bc)
 
 ![image](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/4e4d025c-864d-496d-bda5-696212cc4ca5)
@@ -7,3 +9,10 @@
 
 
 ![image](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/5267ff81-077f-489b-8edc-9f08daa7edce)
+
+
+Infra Diagram : 
+
+![Cassandra Infra - Page 1](https://github.com/Parasharam-DevOps/cassandra-tool-infra/assets/132131379/9b0c5426-baa1-4ea0-b94e-bd3ae0d4524c)
+
+
