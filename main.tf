@@ -1,10 +1,13 @@
-#terraform {
+/*
+terraform {
   backend "s3" {
     bucket = "vidhyarthi-tool-state-file"
     key    = "parasharam-State-File/terraform.tfstate"
     region = "us-west-1"
   }
-#}
+}
+*/
+
 
 
 module "network_module" {
