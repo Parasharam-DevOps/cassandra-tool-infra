@@ -40,7 +40,7 @@ variable "key_pair" {
 
 variable "ami_id" {
   type    = string
-  default = "ami-00983e8a26e4c9bd9"
+  default = "ami-0f58b397bc5c1f2e8"
 }
 
 /*--------------- Bastion Instance ---------------*/
